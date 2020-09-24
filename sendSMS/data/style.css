@@ -1,0 +1,19 @@
+.blue{
+    color: blue;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.hidden{
+    display: none;
+}
+
+.message{
+    font-weight: bold;
+}

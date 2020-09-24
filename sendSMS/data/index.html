@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ESP32 Web Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Send a sms message</h1>
+    <form onsubmit="return send();">
+        <label for="number">Telephone number:</label>
+        <input type="text" id="number" placeholder="+34..."/>
+        <br/>
+        <label for="text">Message:</label>
+        <br/>
+        <textarea id="text" placeholder="Hi, how are you?"></textarea>
+        <br/>
+        <input type="submit" id="submit" value="Send"/>
+        <span id="sending" class="blue hidden message"> Sending the message... (this may take a long time) </span>
+        <span id="success" class="green hidden message"> The sms has been sent! =) </span>
+        <span id="error" class="red hidden message"> There was an error... check the serial log =( </span>
+    </form>
+</body>
+</html>
