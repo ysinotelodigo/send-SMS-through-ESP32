@@ -1,8 +1,8 @@
 const send = function () {
     document.getElementById("submit").disabled=true;
-    document.getElementById("success").classList.add("hidden");
-    document.getElementById("error").classList.add("hidden");
-    document.getElementById("sending").classList.remove("hidden");
+    $('#sending').removeClass('d-none').addClass('show');
+    $('#success').addClass('d-none').removeClass('show');
+    $('#error').addClass('d-none').removeClass('show');
     let number = document.getElementById("number").value;
     let text = document.getElementById("text").value;
     let sms = { telephone: number, message: text };
@@ -29,16 +29,16 @@ const send = function () {
     httpRequest.send(JSON.stringify(sms));
 
     httpRequest.onload=()=>{
-        document.getElementById("sending").classList.add("hidden");
-        document.getElementById("success").classList.remove("hidden");
+        $('#success').removeClass('d-none').addClass('show');
+        $('#sending').addClass('d-none').removeClass('show');
         document.getElementById("submit").disabled=false;
         document.getElementById("number").value="";
         document.getElementById("text").value="";
     };
 
     httpRequest.onerror=()=>{
-        document.getElementById("sending").classList.add("hidden");
-        document.getElementById("error").classList.remove("hidden");
+        $('#error').removeClass('d-none').addClass('show');
+        $('#sending').addClass('d-none').removeClass('show');
         document.getElementById("submit").disabled=false;
     };
 
